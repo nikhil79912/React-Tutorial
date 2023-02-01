@@ -1,30 +1,27 @@
 import React from 'react'
 // import User from './component/user'
+import Student from './component/Student'
 class App extends React.Component{
   constructor(){
     super()
-    this.state={
-      count:0
-    }
-    console.warn('constructor')
-  }
-  shouldComponentUpdate(){
-    console.warn("componetn did Update" ,this.state.count)
-    if(this.state.count>5 && this.state.count<10)
-   return true
+      this.state={
+        show:true
+      }
     }
   
   render(){
-    console.warn("render")
+    
     return (
       <div className='app'>
-       <h1>Should Component update {this.state.count} </h1>
-      <button onClick={()=>{this.setState({count:this.state.count+1})}}>updadate name</button>
+        {
+          this.state.show ? <Student/> :<h1>child component Removed</h1>
+        }
+       <Student/>
+      <button onClick={()=>this.setState({show:!this.state.show})}>Toggle Child Component </button>
+
       </div>
     )
     }
-  
-  
   }
 
 
