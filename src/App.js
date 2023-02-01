@@ -1,13 +1,15 @@
 import React from 'react'
 import User from './component/user'
+
+
+
 const App=()=>{
-  function getData(){
-    alert("hello from app")
-  }
+  const[name,setname]=React.useState("nik")
   return (
-    <div>
-     <h1>Nikhil Technical</h1>
-     <User data={getData}/>
+    <div className='app'>
+      <h1>Render Method In React </h1>
+      <User name={name}/>
+      <button onClick={()=>setname("nikka")}>update Name</button>
     </div>
   )
 }
